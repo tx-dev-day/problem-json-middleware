@@ -1,0 +1,10 @@
+services:
+  php:
+    build:
+      dockerfile: .docker/Dockerfile
+      context: .
+    volumes:
+      - ./:/opt/project
+    working_dir: /opt/project
+    environment:
+      XDEBUG_MODE: coverage,debug

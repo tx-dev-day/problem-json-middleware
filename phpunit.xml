@@ -1,0 +1,30 @@
+<phpunit
+        colors="true"
+        verbose="true"
+>
+    <php>
+        <ini name="date.timezone" value="UTC" />
+        <ini name="error_log" value="php://output" />
+    </php>
+
+    <testsuites>
+        <testsuite name="tests">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage>
+        <include>
+            <directory>src</directory>
+        </include>
+        <report>
+            <clover outputFile="phpunit/coverage/clover.xml" />
+            <html outputDirectory="phpunit/coverage/html" />
+            <text outputFile="php://output" showOnlySummary="true" />
+        </report>
+    </coverage>
+
+    <logging>
+        <junit outputFile="phpunit/logs/junit.xml" />
+    </logging>
+</phpunit>
